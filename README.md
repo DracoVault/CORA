@@ -133,7 +133,7 @@ The frontend implements the **Ethereal Engine** design system — a premium, imm
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/AakashSharma08/CORA.git
+git clone https://github.com/DracoVault/CORA.git
 cd CORA
 
 # Create and activate virtual environment
