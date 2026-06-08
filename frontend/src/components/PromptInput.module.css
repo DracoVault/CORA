@@ -1,0 +1,224 @@
+.section {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.label svg {
+  color: var(--accent);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 120px;
+  display: block;
+  resize: none;
+  outline: none;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  color: var(--text-primary);
+  padding: 18px 20px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: 0 4px 24px -8px var(--shadow-color);
+  transition: border-color 300ms ease, background 300ms ease, box-shadow 300ms ease;
+}
+
+.textarea:focus {
+  border-color: var(--primary-glow);
+  background: rgba(20, 20, 24, 0.6);
+  box-shadow: 0 0 24px -4px var(--primary-glow);
+}
+
+.textarea::placeholder {
+  color: var(--text-dim);
+  opacity: 0.5;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.hint {
+  color: var(--text-dim);
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  opacity: 0.6;
+}
+
+.hint kbd {
+  padding: 1px 5px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  background: var(--glass-bg);
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sendBtn,
+.optBtn {
+  min-height: 42px;
+  border-radius: var(--radius-full);
+  padding: 0 24px;
+  border: 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 150ms ease;
+}
+
+.sendBtn {
+  min-width: 150px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+
+.sendBtn:hover:not(:disabled) {
+  filter: brightness(1.1);
+  box-shadow: 0 2px 16px var(--accent-glow);
+}
+
+.optBtn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(132, 147, 150, 0.15);
+}
+
+.optBtn:hover:not(:disabled) {
+  background: var(--bg-surface-high);
+  border-color: var(--accent);
+}
+
+.sendBtn:disabled,
+.optBtn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.processingWrap,
+.phaseText {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.orbContainer {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.orb {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.orbRing {
+  position: absolute;
+  inset: 0;
+  border: 1.5px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+.progressTrack {
+  position: relative;
+  height: 2px;
+  margin-top: 20px;
+  background: rgba(132, 147, 150, 0.08);
+}
+
+.progressFill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+  background: var(--accent);
+}
+
+.progressNodes {
+  position: absolute;
+  inset: 50% 0 auto;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressNode {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  border-radius: var(--radius-full);
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+}
+
+.progressNodeActive {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.progressNodeIcon {
+  transition: color 200ms ease;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sendBtn,
+  .optBtn,
+  .buttonGroup {
+    width: 100%;
+  }
+}

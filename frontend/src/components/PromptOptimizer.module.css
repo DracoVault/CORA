@@ -1,0 +1,231 @@
+.inlinePanel,
+.optimizingPanel,
+.errorPanel {
+  width: 100%;
+  margin-top: 18px;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  overflow: hidden;
+  box-shadow: 0 4px 24px -8px var(--shadow-color);
+}
+
+.header {
+  min-height: 58px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header h2 {
+  flex: 1;
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.closeBtn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+.closeBtn:hover {
+  background: var(--bg-card-hover);
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.card {
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  background: var(--glass-bg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardSuggested {
+  border-color: var(--accent);
+}
+
+.cardHeader {
+  min-height: 48px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.badgeLabel,
+.badgeLabelActive,
+.savingBadge {
+  padding: 4px 9px;
+  border-radius: 980px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badgeLabel {
+  background: var(--bg-card-hover);
+  color: var(--text-secondary);
+}
+
+.badgeLabelActive {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.savingBadge {
+  background: var(--success-dim);
+  color: var(--success);
+}
+
+.promptView {
+  flex: 1;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 16px;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.cardOriginal .promptView {
+  color: var(--text-secondary);
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--glass-border);
+  background: transparent;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.selectBtn,
+.selectBtnPrimary,
+.backBtn {
+  min-height: 40px;
+  margin: 16px;
+  border-radius: var(--radius-full);
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.selectBtn,
+.backBtn {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--accent-secondary);
+}
+
+.selectBtnPrimary {
+  border: 0;
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.optimizingPanel,
+.errorPanel {
+  padding: 36px;
+  text-align: center;
+}
+
+.scannerLine {
+  height: 3px;
+  margin: -36px -36px 30px;
+  background: var(--accent);
+}
+
+.sparkleWrap {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sparkleIcon {
+  color: var(--accent);
+}
+
+.optimizingPanel h3,
+.errorPanel h3 {
+  margin: 0 0 8px;
+  color: var(--text-primary);
+  font-size: 21px;
+}
+
+.errorPanel h3 {
+  color: var(--danger);
+}
+
+.optimizingPanel p,
+.errorPanel p {
+  margin: 0 0 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.gridContainer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.gridCell {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card-hover);
+  animation: blink 1.2s infinite;
+}
+
+.gridCell:nth-child(2) { animation-delay: 0.2s; }
+.gridCell:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes blink {
+  0%, 100% { background: var(--bg-card-hover); }
+  50% { background: var(--accent); }
+}
+
+@media (max-width: 768px) {
+  .comparisonGrid {
+    grid-template-columns: 1fr;
+  }
+}
